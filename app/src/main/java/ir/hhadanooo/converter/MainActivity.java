@@ -3,12 +3,16 @@ package ir.hhadanooo.converter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +37,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ir.hhadanooo.converter.Hadanooo.Activity_hadanooo;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText et_file,et_txt;
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         init();
 
@@ -83,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+
             }
         });
 
@@ -100,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         list_byte_file = new ArrayList<>();
         list_byte_txt = new ArrayList<>();
     }
+
 
     public void set_imgage_file(String dir)
     {
@@ -179,5 +188,25 @@ public class MainActivity extends AppCompatActivity {
                 requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},0);
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("test converter").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                startActivity(new Intent(MainActivity.this,converter_test.class));
+                return false;
+            }
+        });
+
+        menu.add("hadanooo").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                startActivity(new Intent(MainActivity.this,Activity_hadanooo.class));
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }
