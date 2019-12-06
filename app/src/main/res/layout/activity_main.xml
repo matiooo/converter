@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="convert file to txt : "
+        android:textSize="20dp"
+        android:id="@+id/tv1"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="file name"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:id="@+id/et_file"
+        android:layout_below="@id/tv1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="file to txt"
+        android:id="@+id/btn_file"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/et_file"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/img_file"
+        android:layout_below="@id/btn_file"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_launcher_background"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#8D8484"
+        android:layout_centerInParent="true"
+        android:id="@+id/v"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="convert txt to file : "
+        android:textSize="20dp"
+        android:id="@+id/tv2"
+        android:layout_below="@id/v"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="txt name"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:id="@+id/et_txt"
+        android:layout_below="@id/tv2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="txt to file"
+        android:id="@+id/btn_txt"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/et_txt"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/img_txt"
+        android:layout_below="@id/btn_txt"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_launcher_background"/>
+
+
+
+
+</RelativeLayout>
